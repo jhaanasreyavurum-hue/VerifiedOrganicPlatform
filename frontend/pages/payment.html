@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payment</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#eef8ee;
+}
+
+header{
+background:#2e7d32;
+color:white;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.container{
+width:500px;
+margin:60px auto;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+h1{
+text-align:center;
+color:#2e7d32;
+margin-bottom:30px;
+}
+
+.option{
+border:1px solid #ddd;
+padding:18px;
+border-radius:10px;
+margin-bottom:15px;
+cursor:pointer;
+}
+
+.option:hover{
+background:#f4fff4;
+}
+
+button{
+width:100%;
+padding:15px;
+background:#2e7d32;
+color:white;
+border:none;
+border-radius:10px;
+font-size:18px;
+margin-top:25px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1b5e20;
+}
+
+.total{
+font-size:22px;
+text-align:center;
+margin-top:20px;
+font-weight:bold;
+color:#1b5e20;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>🌱 Organic Platform</h2>
+
+<nav>
+
+<a href="../index.html">Home</a>
+
+<a href="products.html">Products</a>
+
+<a href="cart.html">Cart</a>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<h1>Select Payment Method</h1>
+
+<div class="option">
+<input type="radio" name="pay" checked>
+Cash on Delivery
+</div>
+
+<div class="option">
+<input type="radio" name="pay">
+UPI
+</div>
+
+<div class="option">
+<input type="radio" name="pay">
+Credit Card
+</div>
+
+<div class="option">
+<input type="radio" name="pay">
+Debit Card
+</div>
+
+<div class="option">
+<input type="radio" name="pay">
+Net Banking
+</div>
+
+<p class="total">
+
+Total Amount : ₹450
+
+</p>
+
+<button onclick="window.location.href='order-success.html'">
+
+Pay & Place Order
+
+</button>
+
+</div>
+
+</body>
+
+</html>

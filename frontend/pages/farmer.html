@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Farmer Dashboard</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+body{
+    margin:0;
+    background:#eef8ee;
+    font-family:Poppins,sans-serif;
+}
+
+.sidebar{
+    position:fixed;
+    width:250px;
+    height:100vh;
+    background:#2e7d32;
+    color:white;
+    padding-top:30px;
+}
+
+.sidebar h2{
+    text-align:center;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:18px 30px;
+}
+
+.sidebar a:hover{
+    background:#1b5e20;
+}
+
+.main{
+    margin-left:250px;
+    padding:40px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    width:230px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.card h3{
+    color:green;
+}
+
+.table{
+    width:100%;
+    background:white;
+    margin-top:40px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#2e7d32;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>🌱 Farmer</h2>
+
+<a href="../index.html">🏠 Home</a>
+
+<a href="products.html">🛒 Products</a>
+
+<a href="#">📦 Orders</a>
+
+<a href="#">💰 Wallet</a>
+
+<a href="#">🌾 Crop Growth</a>
+
+<a href="#">⭐ Reviews</a>
+<a href="orders.html">
+📦 My Orders
+</a>
+
+<a href="#" onclick="logout()">🚪 Logout</a>
+
+
+</div>
+
+<div class="main">
+
+<h1 id="welcomeMessage">Welcome Farmer 👨‍🌾</h1>
+
+<br>
+
+<div class="cards">
+
+<div class="card">
+<h3>Wallet</h3>
+<h2>₹2,500</h2>
+</div>
+
+<div class="card">
+<h3>Total Orders</h3>
+<h2>18</h2>
+</div>
+
+<div class="card">
+<h3>Coupons</h3>
+<h2>6</h2>
+</div>
+
+<div class="card">
+<h3>Reward Points</h3>
+<h2>340</h2>
+</div>
+
+</div>
+
+<div class="table">
+
+<table>
+
+<tr>
+<th>Product</th>
+<th>Status</th>
+<th>Price</th>
+</tr>
+
+<tr>
+<td>Organic Fertilizer</td>
+<td>Delivered</td>
+<td>₹450</td>
+</tr>
+
+<tr>
+<td>Neem Oil</td>
+<td>Shipped</td>
+<td>₹320</td>
+</tr>
+
+<tr>
+<td>Vermicompost</td>
+<td>Processing</td>
+<td>₹600</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+const token = localStorage.getItem("access_token");
+const role = localStorage.getItem("role");
+const name = localStorage.getItem("user_name");
+
+if(!token){
+
+    alert("Please login first.");
+
+    window.location.href="login.html";
+
+}
+
+if(role !== "farmer"){
+
+    alert("Access Denied.");
+
+    window.location.href="login.html";
+
+}
+
+document.getElementById("welcomeMessage").innerHTML =
+"Welcome Farmer 👨‍🌾 " + name;
+
+function logout(){
+
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("role");
+    localStorage.removeItem("user_name");
+
+    window.location.href="login.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

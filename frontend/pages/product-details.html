@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Product Details</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#eef8ee;
+}
+
+header{
+background:#2e7d32;
+color:white;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.container{
+width:90%;
+margin:40px auto;
+display:flex;
+gap:50px;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.left{
+flex:1;
+}
+
+.left img{
+width:100%;
+border-radius:15px;
+}
+
+.right{
+flex:1;
+}
+
+.right h1{
+color:#2e7d32;
+margin-bottom:20px;
+}
+
+.price{
+font-size:32px;
+font-weight:bold;
+margin:20px 0;
+color:#1b5e20;
+}
+
+.rating{
+font-size:22px;
+color:orange;
+margin-bottom:20px;
+}
+
+button{
+padding:15px 30px;
+border:none;
+background:#2e7d32;
+color:white;
+font-size:18px;
+border-radius:10px;
+cursor:pointer;
+margin-right:15px;
+margin-top:20px;
+}
+
+button:hover{
+background:#1b5e20;
+}
+
+.info{
+margin-top:30px;
+line-height:2;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>🌱 Organic Platform</h2>
+
+<nav>
+
+<a href="../index.html">Home</a>
+
+<a href="products.html">Products</a>
+
+<a href="farmer.html">Dashboard</a>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="left">
+
+<img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800">
+
+</div>
+
+<div class="right">
+
+<h1>Organic Fertilizer</h1>
+
+<p class="rating">
+⭐⭐⭐⭐⭐ (4.9/5)
+</p>
+
+<p class="price">
+₹450
+</p>
+
+<p>
+
+Premium organic fertilizer made from natural compost.
+Suitable for paddy, cotton, maize, vegetables and fruits.
+
+</p>
+
+<div class="info">
+
+<p>✅ Certified Organic</p>
+
+<p>🌱 Eco Friendly</p>
+
+<p>🚚 Free Delivery</p>
+
+<p>📦 Available Stock : 120 Bags</p>
+
+<p>🏭 Supplier : Green Organic Pvt Ltd</p>
+
+</div>
+
+<button onclick="window.location.href='cart.html'">
+
+Add to Cart
+
+</button>
+
+<button>
+
+Buy Now
+
+</button>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

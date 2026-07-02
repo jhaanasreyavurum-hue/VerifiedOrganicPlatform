@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Organic Products</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#eef8ee;
+}
+
+header{
+
+background:#2e7d32;
+padding:20px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:white;
+
+}
+
+header a{
+
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-size:18px;
+
+}
+
+.container{
+
+width:90%;
+margin:auto;
+padding:40px 0;
+
+}
+
+.container h1{
+
+text-align:center;
+color:#2e7d32;
+margin-bottom:40px;
+
+}
+
+.search{
+
+text-align:center;
+margin-bottom:40px;
+
+}
+
+.search input{
+
+width:400px;
+padding:15px;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:18px;
+
+}
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+
+}
+
+.card{
+
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+}
+
+.card img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+
+}
+
+.card-body{
+
+padding:20px;
+
+}
+
+.card h3{
+
+color:#2e7d32;
+
+}
+
+.price{
+
+font-size:22px;
+font-weight:bold;
+margin:10px 0;
+
+}
+
+.rating{
+
+color:orange;
+margin-bottom:15px;
+
+}
+
+button{
+
+background:#2e7d32;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+
+}
+
+button:hover{
+
+background:#1b5e20;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>🌱 Organic Platform</h2>
+
+<nav>
+
+<a href="../index.html">Home</a>
+
+<a href="farmer.html">Dashboard</a>
+
+<a href="cart.html">Cart</a>
+
+<a href="login.html">Login</a>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<h1>Organic Products</h1>
+
+<div class="search">
+
+<input type="text" placeholder="Search Products...">
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=600">
+
+<div class="card-body">
+
+<h3>Organic Fertilizer</h3>
+
+<p class="price">₹450</p>
+
+<p class="rating">⭐⭐⭐⭐⭐</p>
+
+<button onclick="addToCart(6)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600">
+
+<div class="card-body">
+
+<h3>Bio Pesticide</h3>
+
+<p class="price">₹320</p>
+
+<p class="rating">⭐⭐⭐⭐⭐</p>
+
+<button onclick="addToCart(7)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600">
+
+<div class="card-body">
+
+<h3>Vermicompost</h3>
+
+<p class="price">₹600</p>
+
+<p class="rating">⭐⭐⭐⭐⭐</p>
+
+<button onclick="addToCart(8)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=600">
+
+<div class="card-body">
+
+<h3>Neem Oil</h3>
+
+<p class="price">₹250</p>
+
+<p class="rating">⭐⭐⭐⭐⭐</p>
+
+<button onclick="addToCart(5)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600">
+
+<div class="card-body">
+
+<h3>Organic Compost</h3>
+
+<p class="price">₹700</p>
+
+<p class="rating">⭐⭐⭐⭐⭐</p>
+
+<button onclick="addToCart(9)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=600">
+
+<div class="card-body">
+
+<h3>Seaweed Extract</h3>
+
+<p class="price">₹900</p>
+
+<p class="rating">⭐⭐⭐⭐⭐</p>
+
+<button onclick="addToCart(10)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<script>
+
+async function addToCart(productId){
+
+    const buyer = localStorage.getItem("user_name");
+
+    if(!buyer){
+
+        alert("Please login first.");
+
+        window.location.href="login.html";
+
+        return;
+
+    }
+
+    const cart = {
+
+        product_id: productId,
+        buyer_name: buyer,
+        quantity: 1
+
+    };
+
+    const response = await fetch(
+        "http://127.0.0.1:8000/cart/",
+        {
+
+            method:"POST",
+
+            headers:{
+                "Content-Type":"application/json"
+            },
+
+            body:JSON.stringify(cart)
+
+        }
+
+    );
+
+    if(response.ok){
+
+        alert("Product Added To Cart Successfully!");
+
+    }
+    else{
+
+        alert("Unable to add product.");
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>

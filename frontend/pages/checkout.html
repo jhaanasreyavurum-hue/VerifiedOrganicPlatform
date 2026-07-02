@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#eef8ee;
+}
+
+header{
+background:#2e7d32;
+color:white;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.container{
+width:90%;
+margin:40px auto;
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:30px;
+}
+
+.form-box{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.form-box h2{
+color:#2e7d32;
+margin-bottom:20px;
+}
+
+label{
+display:block;
+margin-top:15px;
+font-weight:bold;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:12px;
+margin-top:8px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+.summary{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+height:fit-content;
+}
+
+.summary h2{
+color:#2e7d32;
+margin-bottom:20px;
+}
+
+.summary p{
+margin:15px 0;
+font-size:18px;
+}
+
+button{
+width:100%;
+padding:15px;
+margin-top:20px;
+background:#2e7d32;
+color:white;
+border:none;
+border-radius:8px;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1b5e20;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>🌱 Organic Platform</h2>
+
+<nav>
+
+<a href="../index.html">Home</a>
+
+<a href="products.html">Products</a>
+
+<a href="cart.html">Cart</a>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="form-box">
+
+<h2>Delivery Information</h2>
+
+<label>Full Name</label>
+<input type="text" placeholder="Enter your name">
+
+<label>Phone Number</label>
+<input type="text" placeholder="Enter phone number">
+
+<label>Village / City</label>
+<input type="text" placeholder="Enter village or city">
+
+<label>District</label>
+<input type="text" placeholder="Enter district">
+
+<label>State</label>
+<input type="text" placeholder="Enter state">
+
+<label>PIN Code</label>
+<input type="text" placeholder="Enter PIN Code">
+
+<label>Delivery Address</label>
+<textarea rows="4" placeholder="Complete Address"></textarea>
+
+<label>Payment Method</label>
+
+<select>
+
+<option>Cash on Delivery</option>
+
+<option>UPI</option>
+
+<option>Credit Card</option>
+
+<option>Debit Card</option>
+
+</select>
+
+</div>
+
+<div class="summary">
+
+<h2>Order Summary</h2>
+
+<p>Organic Fertilizer</p>
+
+<p>Quantity : 1</p>
+
+<p>Subtotal : ₹450</p>
+
+<p>Delivery : FREE</p>
+
+<hr>
+
+<p><strong>Total : ₹450</strong></p>
+
+<button onclick="window.location.href='payment.html'">
+
+Continue to Payment
+
+</button>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
