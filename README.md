@@ -1,145 +1,191 @@
 # 🌱 Verified Organic Platform
 
-A full-stack web application developed to connect **farmers**, **organic product suppliers**, and **administrators** through a secure online marketplace. The platform enables users to browse verified organic products, manage orders, and maintain transparency in the organic supply chain.
+A full-stack web application that connects **Farmers**, **Suppliers**, and **Administrators** through a secure online marketplace for verified organic agricultural products.
+
+The platform enables users to browse products, manage carts and orders, and provides role-based access for different types of users.
 
 ---
 
-## 📌 Project Overview
+# 🚀 Live Demo
 
-The **Verified Organic Platform** is designed to promote organic farming by providing a centralized platform where:
+## Frontend
 
-- Farmers can purchase verified organic products.
-- Suppliers can manage and list organic products.
-- Administrators can monitor users, products, and orders.
 
-The application is built using **FastAPI**, **MySQL**, **HTML**, **CSS**, and **JavaScript**.
+https://verified-organic-frontend.onrender.com
+
+
+## Backend API
+
+
+https://verified-organic-platform.onrender.com
+
+
+## API Documentation
+
+https://verified-organic-platform.onrender.com/docs
+
 
 ---
 
-## ✨ Features
+# 📌 Features
 
-### 👨‍🌾 Farmer Module
-- User Registration & Login
-- Browse Organic Products
-- Product Search
-- Product Details
-- Add Products to Cart
-- Checkout
-- Payment Page
-- Order History
+### 👨‍🌾 Farmer
 
-### 🏭 Supplier Module
-- Supplier Dashboard
-- Add Products
-- Update Products
-- Delete Products
-- Search Products
-- Manage Inventory
+* Register & Login
+* Browse Organic Products
+* Search Products
+* View Product Details
+* Add Products to Cart
+* Place Orders
+* View Order History
 
-### 🛡️ Admin Module
-- Admin Dashboard
-- View Users
-- View Products
-- Monitor Orders
-- Platform Statistics
+### 🏭 Supplier
+
+* Supplier Dashboard
+* Add Products
+* Update Products
+* Delete Products
+* Manage Inventory
+
+### 🛡️ Admin
+
+* Admin Dashboard
+* View Users
+* Manage Products
+* Monitor Orders
 
 ### 🛒 Shopping Cart
-- Add Items
-- Remove Items
-- Checkout
-- Order Creation
+
+* Add to Cart
+* Remove from Cart
+* Checkout
+* Order Management
 
 ### 🔐 Authentication
-- Secure Login
-- Password Hashing
-- JWT Authentication
-- Role-Based Authorization
+
+* JWT Authentication
+* Password Hashing
+* Role-Based Authorization
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Technology Stack
 
-### Backend
-- FastAPI
-- Python
-- SQLAlchemy
-- Pydantic
-- JWT Authentication
-- Uvicorn
+## Frontend
 
-### Frontend
-- HTML5
-- CSS3
-- JavaScript
+* HTML5
+* CSS3
+* JavaScript
 
-### Database
-- MySQL
+## Backend
 
-### Version Control
-- Git
-- GitHub
+* FastAPI
+* Python
+* SQLAlchemy
+* Pydantic
+* Uvicorn
+
+## Database
+
+* PostgreSQL (Render)
+
+## Deployment
+
+* Render Web Service
+* Render PostgreSQL
+* Render Static Site
+
+## Version Control
+
+* Git
+* GitHub
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
-```
+```text
 VerifiedOrganicPlatform/
 │
 ├── backend/
+│   │
 │   ├── app/
+│   │   │
 │   │   ├── routers/
-│   │   ├── models.py
-│   │   ├── schemas.py
-│   │   ├── crud.py
-│   │   ├── database.py
-│   │   ├── dependencies.py
-│   │   ├── security.py
-│   │   └── main.py
-│   ├── requirements.txt
-│   └── venv/
+│   │   │   ├── auth.py          # User registration & login
+│   │   │   ├── products.py      # Product CRUD operations
+│   │   │   ├── cart.py          # Shopping cart APIs
+│   │   │   ├── orders.py        # Order management
+│   │   │   ├── farmer.py        # Farmer-specific APIs
+│   │   │   ├── supplier.py      # Supplier-specific APIs
+│   │   │   └── admin.py         # Admin APIs
+│   │   │
+│   │   ├── crud.py              # Database CRUD functions
+│   │   ├── database.py          # PostgreSQL database connection
+│   │   ├── dependencies.py      # Dependency injection & authentication
+│   │   ├── models.py            # SQLAlchemy database models
+│   │   ├── schemas.py           # Pydantic request/response schemas
+│   │   ├── security.py          # JWT token & password hashing
+│   │   └── main.py              # FastAPI application entry point
+│   │
+│   ├── requirements.txt         # Python dependencies
+│   ├── .env                     # Environment variables (not committed)
+│   └── venv/                    # Virtual environment
 │
 ├── frontend/
+│   │
 │   ├── css/
+│   │   └── style.css            # Website styles
+│   │
 │   ├── js/
-│   ├── images/
+│   │   └── script.js            # Frontend JavaScript
+│   │
+│   ├── images/                  # Images and assets
+│   │
 │   ├── pages/
-│   └── index.html
+│   │   ├── login.html
+│   │   ├── register.html
+│   │   ├── products.html
+│   │   ├── cart.html
+│   │   ├── checkout.html
+│   │   ├── orders.html
+│   │   ├── farmer.html
+│   │   ├── supplier.html
+│   │   ├── admin.html
+│   │   └── payment.html
+│   │
+│   └── index.html               # Landing page
 │
-└── README.md
+├── .gitignore                   # Git ignore rules
+├── README.md                    # Project documentation
+└── LICENSE                      # Project license (optional)
 ```
+
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Local Installation
 
-### 1. Clone the Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/jhaanasreyavurum-hue/VerifiedOrganicPlatform.git
 ```
 
-### 2. Navigate to the Project
+## Enter Project
 
 ```bash
 cd VerifiedOrganicPlatform
 ```
 
-### 3. Backend Setup
+## Backend Setup
 
 ```bash
 cd backend
-```
-
-Create a virtual environment
-
-```bash
 python -m venv venv
 ```
 
-Activate it
-
-**Windows**
+### Windows
 
 ```bash
 venv\Scripts\activate
@@ -151,79 +197,73 @@ Install dependencies
 pip install -r requirements.txt
 ```
 
-### 4. Configure Database
+Create a `.env` file.
 
-Create a MySQL database and update the database connection settings in:
+Example:
 
+```env
+DATABASE_URL=your_postgresql_database_url
+SECRET_KEY=your_secret_key
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
 ```
-backend/app/database.py
-```
 
-### 5. Run the Backend
+Run the backend
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Backend URL
-
-```
-http://127.0.0.1:8000
-```
-
-Swagger API Documentation
+Open:
 
 ```
 http://127.0.0.1:8000/docs
 ```
 
-### 6. Run the Frontend
+## Frontend
 
-Open the frontend using **Live Server** in Visual Studio Code.
-
----
-
-## 📷 Screenshots
-
-You can add screenshots of:
-
-- Home Page
-- Product Page
-- Shopping Cart
-- Checkout
-- Supplier Dashboard
-- Admin Dashboard
+Open `frontend/index.html` using Live Server in Visual Studio Code.
 
 ---
 
-## 🎯 Future Improvements
+# 📷 Screenshots
 
-- Online Payment Gateway Integration
-- Product Review & Rating System
-- Email Notifications
-- SMS Alerts
-- AI-based Product Recommendations
-- GIS Integration for Organic Farm Mapping
-- Cloud Deployment (AWS/Azure)
-- Mobile Application
+Add screenshots of:
 
----
-
-## 🎓 Academic Purpose
-
-This project was developed as part of postgraduate learning in **Agriculture Analytics**, combining web development, database management, and backend API development.
+* Home Page
+* Login Page
+* Farmer Dashboard
+* Supplier Dashboard
+* Admin Dashboard
+* Products Page
+* Shopping Cart
+* Orders Page
 
 ---
 
-## 👩‍💻 Author
+# 📈 Future Enhancements
+
+* Payment Gateway Integration
+* Product Ratings & Reviews
+* Email Notifications
+* SMS Alerts
+* AI-Based Product Recommendations
+* GIS Integration
+* Mobile Application
+
+---
+
+# 👩‍💻 Author
 
 **Shreya Vurum**
 
-- GitHub: https://github.com/jhaanasreyavurum-hue
+GitHub:
+https://github.com/jhaanasreyavurum-hue
 
 ---
 
-## 📄 License
-This project is intended for educational and learning purposes.
+# 📄 License
+
+This project is developed for educational and learning purposes.
 
 
