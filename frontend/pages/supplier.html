@@ -115,7 +115,7 @@ Customer Orders
 </div>
 
 <script>
-const API_URL="http://127.0.0.1:8000/products";
+const API_URL= "https://verified-organic-platform.onrender.com/products";
 let editingProductId=null;
 document.getElementById("welcomeMessage").textContent="Welcome Supplier "+(localStorage.getItem("user_name")||"");
 
@@ -224,7 +224,7 @@ document.getElementById("productForm").onsubmit=async(e)=>{
 async function loadOrders(){
 
     const response = await fetch(
-        "http://127.0.0.1:8000/orders/all/orders"
+         "https://verified-organic-platform.onrender.com/orders/all/orders"
     );}
 
     if(!response.ok){
@@ -296,7 +296,7 @@ async function updateStatus(orderId){
 
     const response = await fetch(
 
-        `http://127.0.0.1:8000/supplier/orders/${orderId}?status=${status}`,
+        `https://verified-organic-platform.onrender.com//supplier/orders/${orderId}?status=${status}`,
 
         {
 
