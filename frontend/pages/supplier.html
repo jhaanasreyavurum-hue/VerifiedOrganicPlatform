@@ -60,32 +60,7 @@ th{background:#2e7d32;color:#fff}
 <thead><tr><th>ID</th><th>Name</th><th>Price</th><th>Stock</th><th>Action</th></tr></thead>
 <tbody id="productTable"></tbody>
 </table>
-<h2 style="margin-top:40px;color:#2e7d32;">
-Customer Orders
-</h2>
 
-<table>
-
-<thead>
-
-<tr>
-
-<th>Order ID</th>
-<th>Buyer</th>
-<th>Product ID</th>
-<th>Quantity</th>
-<th>Status</th>
-
-</tr>
-
-</thead>
-
-<tbody id="ordersTable">
-
-</tbody>
-
-</table>
-<br><br>
 
 <h2>Customer Orders</h2>
 
@@ -270,7 +245,7 @@ async function loadOrders(){
         <tr>
             <td>${order.id}</td>
             <td>${order.buyer_name}</td>
-            <td>${order.product_name}</td>
+            <td>${order.product_id}</td>
             <td>${order.quantity}</td>
             <td>₹${order.total_price}</td>
             <td>
@@ -324,8 +299,6 @@ async function updateStatus(orderId){
     }
 
 }
-loadProducts();
-loadOrders();
 </script>
 </body>
 </html>
