@@ -105,7 +105,9 @@ if(!buyer){
 
 async function loadOrders(){
 
-    const response = await fetch("https://verified-organic-platform.onrender.com/orders"/{buyer});
+    const response = await fetch(
+    `https://verified-organic-platform.onrender.com/orders/${buyer}`
+);
 
     const orders = await response.json();
 

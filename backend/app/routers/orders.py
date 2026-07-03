@@ -22,14 +22,15 @@ def view_orders(
     db: Session = Depends(get_db)
 ):
     return crud.get_orders(db)
+@router.get("/all/orders", response_model=list[schemas.OrderResponse])
+def view_all_orders(
+    db: Session = Depends(get_db)
+):
+    return crud.get_all_orders(db)
+
 @router.get("/{buyer_name}", response_model=list[schemas.OrderResponse])
 def get_my_orders(
     buyer_name: str,
     db: Session = Depends(get_db)
 ):
     return crud.get_orders_by_buyer(db, buyer_name)
-@router.get("/all/orders", response_model=list[schemas.OrderResponse])
-def view_all_orders(
-    db: Session = Depends(get_db)
-):
-    return crud.get_all_orders(db)
