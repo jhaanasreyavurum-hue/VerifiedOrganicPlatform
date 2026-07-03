@@ -119,7 +119,15 @@ const API_URL= "https://verified-organic-platform.onrender.com/products";
 let editingProductId=null;
 document.getElementById("welcomeMessage").textContent="Welcome Supplier "+(localStorage.getItem("user_name")||"");
 
-function logout(){localStorage.clear();location.href="login.html";}
+function logout(){
+
+    localStorage.removeItem("token");
+    localStorage.removeItem("user_name");
+    localStorage.removeItem("role");
+
+    window.location.replace("login.html");
+
+}
 
 async function loadProducts(){
  const res=await fetch(API_URL);
@@ -219,7 +227,23 @@ document.getElementById("productForm").onsubmit=async(e)=>{
  const url=editingProductId?`${API_URL}/${editingProductId}`:API_URL;
  const method=editingProductId?"PUT":"POST";
  const r=await fetch(url,{method,headers:{"Content-Type":"application/json"},body:JSON.stringify(product)});
- if(r.ok){alert(editingProductId?"Updated":"Added");editingProductId=null;document.getElementById("cancelBtn").click();loadProducts();}else{alert("Operation failed");}
+ if(r.ok){
+
+    alert(editingProductId ? "Updated Successfully" : "Product Added Successfully");
+
+    editingProductId = null;
+
+    document.getElementById("cancelBtn").click();
+
+    loadProducts();
+
+}else{
+
+    const error = await r.text();
+
+    alert(error);
+
+}
 };
 async function loadOrders(){
 
