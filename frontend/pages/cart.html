@@ -185,14 +185,12 @@ async function checkout(){
             headers:{
                 "Content-Type":"application/json"
             },
-            body:JSON.stringify({
-
-                buyer_name:item.buyer_name,
-                product_id:item.product_id,
-                quantity:item.quantity,
-                status:"Pending"
-
-            })
+            body: JSON.stringify({
+    buyer_name: item.buyer_name,
+    product_id: item.product_id,
+    quantity: item.quantity,
+    total_price: 0
+})
         });
 
     }
